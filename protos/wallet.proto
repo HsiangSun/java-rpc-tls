@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package wallet;
+option go_package = "/wallet";
+option java_multiple_files = true;
+option java_package = "cn.hsiangsun.wallet.rpc.wallet";
+option java_outer_classname = "WalletProto";
+option objc_class_prefix = "HL";
+
+service Address{
+  rpc GenerateAddress(AddressRequest) returns (AddressResponse){}
+}
+
+message AddressRequest{
+  string uid = 1;
+}
+
+message AddressResponse{
+  string address = 1;
+}
