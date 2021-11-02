@@ -7,12 +7,13 @@ option java_package = "cn.hsiangsun.wallet.rpc.wallet";
 option java_outer_classname = "WalletProto";
 option objc_class_prefix = "HL";
 
-service Address{
+service Address {
   rpc GenerateAddress(AddressRequest) returns (AddressResponse){}
 }
 
 message AddressRequest{
-  string uid = 1;
+  string secret = 1;
+  string uid = 2;
 }
 
 message AddressResponse{
